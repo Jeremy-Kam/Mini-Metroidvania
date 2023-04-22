@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1587179954466218857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4533331269729489565}
+  - component: {fileID: 5592657270570066393}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4533331269729489565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587179954466218857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5592657270570066393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587179954466218857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e200293ef3e5f754aab5d3db1ee64d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: slimeJump
+    clip: {fileID: 8300000, guid: 04badd61cabf99c44aab8dfa18289a45, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: slimeLand
+    clip: {fileID: 8300000, guid: 4f7cf77a4886ad94ba1ab8cfc6f290c8, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: swordAttack
+    clip: {fileID: 8300000, guid: 8c4af9b72a3db4542b37b9d09168f924, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: enemyBulletShoot
+    clip: {fileID: 8300000, guid: bee94ae16cd4cfd42bc3c5269c8f1c16, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: powerUp
+    clip: {fileID: 8300000, guid: f4c6fd61ca8f21e44896adae07896a59, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerHit
+    clip: {fileID: 8300000, guid: e571b3468c4114742a9c60a3cbb4d3a8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: heartPickup
+    clip: {fileID: 8300000, guid: 16b880633978bcc49a50b0d987fedb8d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: heartContainerPickup
+    clip: {fileID: 8300000, guid: 2d1ac39b4998875418f7b4ab99adf0a9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rpgHit
+    clip: {fileID: 8300000, guid: 3a2b42c830ea0ef408631a66961913d2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: magnumHit
+    clip: {fileID: 8300000, guid: 1eed9e5865aabae48a9ba463f3a3b35c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pistolShoot
+    clip: {fileID: 8300000, guid: 64b3dff6f9e9d724babcc899913055bc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerJump
+    clip: {fileID: 8300000, guid: 118a863019903e8459a375699833b6a8, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shotgunShoot
+    clip: {fileID: 8300000, guid: 047a269fec3b94d42914d25b7e9531fd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: rpgShoot
+    clip: {fileID: 8300000, guid: d30d921ef97fe62448fe8ee268aaa6d4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: playerDash
+    clip: {fileID: 8300000, guid: 77b9368c0455e1b409b6366257155d28, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pistolHit
+    clip: {fileID: 8300000, guid: 2584f244609f2f24dadbf5328fce5b87, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

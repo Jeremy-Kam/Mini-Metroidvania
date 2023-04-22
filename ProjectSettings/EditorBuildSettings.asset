@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Right.unity
+    guid: 88df2776fe669bb4cb73722da87b21f7
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 896e820af2ff2c14a9c058594b99106d
+  - enabled: 1
+    path: Assets/Scenes/BottomRight.unity
+    guid: dea31fc055b90144ca5c7ebefd3fc387
+  - enabled: 1
+    path: Assets/Scenes/Pit.unity
+    guid: 727dd368ad19e874887e9c265e8dc292
+  - enabled: 1
+    path: Assets/Scenes/Fight.unity
+    guid: 37ff262c11cd3364cb450ad6784874d6
+  - enabled: 1
+    path: Assets/Scenes/Hallway_0.unity
+    guid: c47815a49e4cb7b428c8794df0bd156d
+  - enabled: 1
+    path: Assets/Scenes/Hallway_1.unity
+    guid: 072bfd27462640949bc29b417217fdec
+  - enabled: 1
+    path: Assets/Scenes/Vert.unity
+    guid: 115d37478677e3842bde7fa46f9b18f1
+  - enabled: 1
+    path: Assets/Scenes/BeforeBoss.unity
+    guid: 4e920ae5fe2e857459293ff645b10577
+  - enabled: 1
+    path: Assets/Scenes/Boss_1.unity
+    guid: 7621a2f7255b9b9478fad2e27f578034
+  - enabled: 1
+    path: Assets/Scenes/Secret.unity
+    guid: efb58a50a384c9c44b88ee80021c2536
+  - enabled: 1
+    path: Assets/Scenes/TopLeft.unity
+    guid: afe038a71a223324b81656fcd9263c17
+  - enabled: 1
+    path: Assets/Scenes/Boss_0.unity
+    guid: 88035af10ef77c14c8839ce2bcde2d25
+  - enabled: 1
+    path: Assets/Scenes/TopMiddle.unity
+    guid: 189cd380f0cd0f442a0afec00c025dd7
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 3bebaa6307b10ca4993830e28624f796, type: 2}

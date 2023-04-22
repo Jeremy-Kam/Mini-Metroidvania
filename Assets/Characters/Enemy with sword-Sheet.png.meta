@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 249529ef4469a4543af089aef2210aa1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6498590494856149841
+    second: Enemy with sword-Sheet_0
+  - first:
+      213: -3650863748004438276
+    second: Enemy with sword-Sheet_1
+  - first:
+      213: -1823364720711580676
+    second: Enemy with sword-Sheet_2
+  - first:
+      213: 3281007195284880212
+    second: Enemy with sword-Sheet_3
+  - first:
+      213: -3673985864750834059
+    second: Enemy with sword-Sheet_4
+  - first:
+      213: -7292329189148781289
+    second: Enemy with sword-Sheet_5
+  - first:
+      213: 1023887257687846821
+    second: Enemy with sword-Sheet_6
+  - first:
+      213: -6428301236815067903
+    second: Enemy with sword-Sheet_7
+  - first:
+      213: 6548145079446654597
+    second: Enemy with sword-Sheet_8
+  - first:
+      213: -7674583906600375212
+    second: Enemy with sword-Sheet_9
+  - first:
+      213: -560955426026251660
+    second: Enemy with sword-Sheet_10
+  - first:
+      213: -114238182297518673
+    second: Enemy with sword-Sheet_11
+  - first:
+      213: 8038570586647687140
+    second: Enemy with sword-Sheet_12
+  - first:
+      213: -8095206510820170570
+    second: Enemy with sword-Sheet_13
+  - first:
+      213: -5722714474083817015
+    second: Enemy with sword-Sheet_14
+  - first:
+      213: 6236322897047367240
+    second: Enemy with sword-Sheet_15
+  - first:
+      213: -3656919036172597581
+    second: Enemy with sword-Sheet_16
+  - first:
+      213: 4495284897254606941
+    second: Enemy with sword-Sheet_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa48e5d306e50d5a0800000000000000
+      internalID: -6498590494856149841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe18d8a3c6855dc0800000000000000
+      internalID: -3650863748004438276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3c106727b12b6e0800000000000000
+      internalID: -1823364720711580676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bb47c19aa788d20800000000000000
+      internalID: 3281007195284880212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e58b55251630dc0800000000000000
+      internalID: -3673985864750834059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71513972d317cca90800000000000000
+      internalID: -7292329189148781289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af688c3904953e00800000000000000
+      internalID: 1023887257687846821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1050f6e65161ac6a0800000000000000
+      internalID: -6428301236815067903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ec326914fafda50800000000000000
+      internalID: 6548145079446654597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ca72049966e7590800000000000000
+      internalID: -7674583906600375212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a90e813061738f0800000000000000
+      internalID: -560955426026251660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadbe5c7af42a6ef0800000000000000
+      internalID: -114238182297518673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efe90fbb5dbe8f60800000000000000
+      internalID: 8038570586647687140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b46223919c08af80800000000000000
+      internalID: -8095206510820170570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c96f3d8185d490b0800000000000000
+      internalID: -5722714474083817015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ea42722aedb8650800000000000000
+      internalID: 6236322897047367240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b681940383004dc0800000000000000
+      internalID: -3656919036172597581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy with sword-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d580a090cc5726e30800000000000000
+      internalID: 4495284897254606941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Enemy with sword-Sheet_9: -7674583906600375212
+      Enemy with sword-Sheet_11: -114238182297518673
+      Enemy with sword-Sheet_2: -1823364720711580676
+      Enemy with sword-Sheet_14: -5722714474083817015
+      Enemy with sword-Sheet_8: 6548145079446654597
+      Enemy with sword-Sheet_17: 4495284897254606941
+      Enemy with sword-Sheet_12: 8038570586647687140
+      Enemy with sword-Sheet_15: 6236322897047367240
+      Enemy with sword-Sheet_5: -7292329189148781289
+      Enemy with sword-Sheet_3: 3281007195284880212
+      Enemy with sword-Sheet_13: -8095206510820170570
+      Enemy with sword-Sheet_1: -3650863748004438276
+      Enemy with sword-Sheet_4: -3673985864750834059
+      Enemy with sword-Sheet_16: -3656919036172597581
+      Enemy with sword-Sheet_6: 1023887257687846821
+      Enemy with sword-Sheet_7: -6428301236815067903
+      Enemy with sword-Sheet_0: -6498590494856149841
+      Enemy with sword-Sheet_10: -560955426026251660
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
