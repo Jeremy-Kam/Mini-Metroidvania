@@ -13,13 +13,13 @@ public class Bullet : MonoBehaviour
 
     private GameObject player;
     [SerializeField] private GameObject playerPrefab;
-
     private void Awake()
     {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-        } else
+        }
+        else
         {
             Debug.Log("Oh no, no player Prefab found for bullet");
         }
@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
         rb.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
 
-        if(transform.rotation.y < 0)
+        if (transform.rotation.y < 0)
         {
             knockback.x *= -1;
         }
@@ -51,16 +51,16 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             BreakableTile bt = collision.GetComponent<BreakableTile>();
-            if(bt != null)
+            if (bt != null)
             {
                 FindObjectOfType<AudioManager>().Play("pistolHit");
                 bt.TakeDamage(damage);
             }
             Destroy(gameObject);
         }
-        
+
         // Enemy
-        if(collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
@@ -73,7 +73,7 @@ public class Bullet : MonoBehaviour
         }
 
         // Switch
-        if(collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11)
         {
             Switch s = collision.GetComponent<Switch>();
             if (s != null)

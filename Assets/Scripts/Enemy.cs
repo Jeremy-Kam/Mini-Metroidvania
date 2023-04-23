@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
@@ -16,7 +17,9 @@ public class Enemy : MonoBehaviour
     public LayerMask playerLayer;
     public bool facingRight;
 
+    [HideInInspector]
     public Collider2D player;
+
     public Rigidbody2D rb2D;
     public CapsuleCollider2D cap2D;
 

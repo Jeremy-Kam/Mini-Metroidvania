@@ -296,7 +296,7 @@ public class Player : MonoBehaviour
     {
         if(isInvincible)
         {
-            // Debug.Log("Invincible");
+            Debug.Log("Invincible");
             return;
         }
 

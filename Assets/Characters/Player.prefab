@@ -178,7 +178,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   firePoint: {fileID: 4732136368886895223}
-  invincibleTime: 1
+  invincibleTime: 0.5
 --- !u!70 &4732136370366032408
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
