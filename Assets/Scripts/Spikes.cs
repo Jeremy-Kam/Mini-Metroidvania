@@ -17,6 +17,11 @@ public class Spikes : MonoBehaviour
 
     [SerializeField] private Player player;
 
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collisionGO = collision.gameObject;

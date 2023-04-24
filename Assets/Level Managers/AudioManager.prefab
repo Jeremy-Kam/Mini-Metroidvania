@@ -141,3 +141,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: enemyBulletShoot2
+    clip: {fileID: 8300000, guid: 761479529ea78704b8565fc98397cada, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pistolHit2
+    clip: {fileID: 8300000, guid: fe90bb03ff5ba0b4daf47a671aff88e4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: doorClosing
+    clip: {fileID: 8300000, guid: f79863e8a2f06a044b1fb6ee265dfe57, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

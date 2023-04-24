@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1979745278386887646}
   - component: {fileID: 4508526800124287965}
   - component: {fileID: 8648972236905487810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ MonoBehaviour:
   spikeDamage: 2
   levelToLoadName: Main
   loadZoneDirection: {x: 0, y: 1}
-  player: {fileID: 0}
+  player: {fileID: 4732136370366032387, guid: 3d0b4615408cb6b40be0d659533bff28, type: 3}
 --- !u!95 &4508526800124287965
 Animator:
   serializedVersion: 4

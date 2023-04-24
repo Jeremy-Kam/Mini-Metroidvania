@@ -12,17 +12,13 @@ public class ProjectileEnemy : MonoBehaviour
     [SerializeField] float enemySpeed;
     [SerializeField] private float playerDetectionDeadzone;
 
-    private bool isWalking;
-
     [SerializeField] private EnemyWeapon ew;
-
 
     private bool isAttacking = false;
 
 
     private void Update()
     {
-        isWalking = false;
         if(!isAttacking)
         {
             if (SeePlayer())
@@ -33,13 +29,12 @@ public class ProjectileEnemy : MonoBehaviour
                 }
                 else
                 {
-                    isWalking = true;
                     Move();
                 }
             }
         }
-            
-        animator.SetBool("isWalking", isWalking);
+
+        animator.SetFloat("speed", GetComponent<Enemy>().rb2D.velocity.x);
     }
 
     // Same as sword enemy
@@ -154,6 +149,7 @@ public class ProjectileEnemy : MonoBehaviour
 
     public void FireGun()
     {
+        FindObjectOfType<AudioManager>().Play("enemyBulletShoot2");
         ew.Shoot();
     }
 

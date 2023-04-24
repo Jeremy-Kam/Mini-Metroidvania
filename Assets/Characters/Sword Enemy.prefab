@@ -206,7 +206,7 @@ MonoBehaviour:
   attackDamage: 2
   enemySpeed: 6
   knockback: {x: 15, y: 15}
-  playerDetectionDeadzone: 0.3
+  playerDetectionDeadzone: 0.5
 --- !u!95 &7273335736692892751
 Animator:
   serializedVersion: 4
