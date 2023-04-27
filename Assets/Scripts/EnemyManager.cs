@@ -39,6 +39,11 @@ public class EnemyManager : MonoBehaviour
     public void RegisterDeath(string uniqueID)
     {
         EnemySpawn enemy = Array.Find(enemyList, enemy => enemy.uniqueID == uniqueID);
+        if(enemy == null)
+        {
+            Debug.LogWarning("Enemy " + uniqueID + " has not been found");
+        }
+
         enemy.isDead = true;
 
         if(IsCompleted())
