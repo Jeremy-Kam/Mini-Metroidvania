@@ -159,3 +159,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: magnumHit
+    clip: {fileID: 8300000, guid: 4898c3cef623db34b93bd95b8ad92222, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss0Swing
+    clip: {fileID: 8300000, guid: f695141e4e2c56c4b913163349953f93, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

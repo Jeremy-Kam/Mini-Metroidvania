@@ -3264,7 +3264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: doorList.Array.data[0]
@@ -3281,34 +3281,50 @@ PrefabInstance:
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 4593320343797195421, guid: b3cd5fe5783d9d44ea05a70b6a53cbc2, type: 3}
+      objectReference: {fileID: 7698783293577236257, guid: a68a8444f4de5aa4cb2416be79f5a8e8, type: 3}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[1].enemy
       value: 
-      objectReference: {fileID: 4593320343797195421, guid: b3cd5fe5783d9d44ea05a70b6a53cbc2, type: 3}
+      objectReference: {fileID: 4542783064866997218, guid: c65ebdc175b093d42a981accf91abfe9, type: 3}
+    - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
+      propertyPath: enemyList.Array.data[2].enemy
+      value: 
+      objectReference: {fileID: 4542783064866997218, guid: c65ebdc175b093d42a981accf91abfe9, type: 3}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[0].uniqueID
-      value: Sword0
+      value: Boss0
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[1].uniqueID
-      value: Sword1
+      value: Ghost0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
+      propertyPath: enemyList.Array.data[2].uniqueID
+      value: Ghost1
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[0].spawnPosition.x
-      value: 6.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[0].spawnPosition.y
-      value: -2.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[1].spawnPosition.x
-      value: 0
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: enemyList.Array.data[1].spawnPosition.y
-      value: 0
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
+      propertyPath: enemyList.Array.data[2].spawnPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356080637898152958, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
+      propertyPath: enemyList.Array.data[2].spawnPosition.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5356080637898152959, guid: 0b02aa6f2037b0e4aba65ca9d3e8011c, type: 3}
       propertyPath: m_RootOrder

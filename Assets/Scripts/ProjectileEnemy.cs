@@ -34,7 +34,7 @@ public class ProjectileEnemy : MonoBehaviour
             }
         }
 
-        animator.SetFloat("speed", GetComponent<Enemy>().rb2D.velocity.x);
+        animator.SetFloat("speed", Math.Abs(GetComponent<Enemy>().rb2D.velocity.x));
     }
 
     // Same as sword enemy

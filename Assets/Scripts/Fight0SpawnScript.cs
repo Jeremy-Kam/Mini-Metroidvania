@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1SpawnScript : MonoBehaviour
+public class Fight0SpawnScript : MonoBehaviour
 {
     [SerializeField] private EnemyManager em;
 
@@ -28,7 +28,10 @@ public class Boss1SpawnScript : MonoBehaviour
         Sword0E.SetUniqueID("Sword0");
         // Debug.Log("Enemy Spawned");
 
-        yield return new WaitForSeconds(1.5f);
+        while (em.GetEnemy("Sword0").isDead == false)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
         EnemySpawn Ghost0 = em.GetEnemy("Ghost0");
         Enemy Ghost0E = Instantiate(Ghost0.enemy, Ghost0.spawnPosition, Ghost0.spawnRotation);
@@ -40,7 +43,10 @@ public class Boss1SpawnScript : MonoBehaviour
         Ghost1E.SetUniqueID("Ghost1");
         // Debug.Log("Enemy Spawned");
 
-        yield return new WaitForSeconds(5f);
+        while (em.GetEnemy("Ghost0").isDead == false || em.GetEnemy("Ghost1").isDead == false)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
         EnemySpawn Slime0 = em.GetEnemy("Slime0");
         Enemy Slime0E = Instantiate(Slime0.enemy, Slime0.spawnPosition, Slime0.spawnRotation);
@@ -57,7 +63,10 @@ public class Boss1SpawnScript : MonoBehaviour
         Gun0E.SetUniqueID("Gun0");
         // Debug.Log("Enemy Spawned");
 
-        yield return new WaitForSeconds(6f);
+        while (em.GetEnemy("Slime0").isDead == false || em.GetEnemy("Slime1").isDead == false || em.GetEnemy("Gun0").isDead == false)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
 
         EnemySpawn Gun1 = em.GetEnemy("Gun1");
         Enemy Gun1E = Instantiate(Gun1.enemy, Gun1.spawnPosition, Gun1.spawnRotation);
@@ -74,11 +83,6 @@ public class Boss1SpawnScript : MonoBehaviour
         EnemySpawn Sword2 = em.GetEnemy("Sword2");
         Enemy Sword2E = Instantiate(Sword2.enemy, Sword2.spawnPosition, Sword2.spawnRotation);
         Sword2E.SetUniqueID("Sword2");
-
-        EnemySpawn Ghost2 = em.GetEnemy("Ghost2");
-        Enemy Ghost2E = Instantiate(Ghost2.enemy, Ghost2.spawnPosition, Ghost2.spawnRotation);
-        Ghost2E.SetUniqueID("Ghost2");
-        // Debug.Log("Enemy Spawned");
 
     }
 }
