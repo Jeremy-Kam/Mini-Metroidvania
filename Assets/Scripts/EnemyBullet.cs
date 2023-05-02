@@ -8,6 +8,7 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private Vector2 knockback;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject impactEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class EnemyBullet : MonoBehaviour
                 // FindObjectOfType<AudioManager>().Play("pistolHit");
                 bt.TakeDamage(damage);
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -44,6 +46,7 @@ public class EnemyBullet : MonoBehaviour
                 player.TakeDamage(damage, knockback);
 
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -56,6 +59,7 @@ public class EnemyBullet : MonoBehaviour
                 // FindObjectOfType<AudioManager>().Play("pistolHit");
                 s.ToggleSwitch();
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

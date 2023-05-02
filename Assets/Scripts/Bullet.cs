@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float bulletRange;
 
+    [SerializeField] private GameObject impactEffect;
+
     private GameObject player;
     [SerializeField] private GameObject playerPrefab;
     private void Awake()
@@ -56,6 +58,7 @@ public class Bullet : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("pistolHit");
                 bt.TakeDamage(damage);
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -69,6 +72,7 @@ public class Bullet : MonoBehaviour
                 enemy.TakeDamage(damage, knockback);
 
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -81,7 +85,9 @@ public class Bullet : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("pistolHit");
                 s.ToggleSwitch();
             }
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+
     }
 }
