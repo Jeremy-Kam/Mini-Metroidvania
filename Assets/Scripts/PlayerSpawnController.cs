@@ -19,8 +19,8 @@ public class PlayerSpawnController : MonoBehaviour
             player = Instantiate(playerPrefab);
         }
 
-        Debug.Log("Spawn Index: " + spawnIndex.getValue());
-        Debug.Log(spawnLocations.Length);
+        // Debug.Log("Spawn Index: " + spawnIndex.getValue());
+        // Debug.Log(spawnLocations.Length);
 
         // Figure out a way to know which spawn position to use
         for (int i = 0; i < spawnLocations.Length; i++)
@@ -28,7 +28,7 @@ public class PlayerSpawnController : MonoBehaviour
             if (spawnLocations[i].index == spawnIndex.getValue())
             {
                 player.transform.position = spawnLocations[i].transform.position;
-                Debug.Log(player.transform.position);
+                // Debug.Log(player.transform.position);
                 break;
             }
         }
