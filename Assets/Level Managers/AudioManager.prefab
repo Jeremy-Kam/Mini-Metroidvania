@@ -171,3 +171,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: gameOverBlip
+    clip: {fileID: 8300000, guid: e9c05d59c3973cc48bf1a7309f15456f, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

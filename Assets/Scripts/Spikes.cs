@@ -44,12 +44,16 @@ public class Spikes : MonoBehaviour
     IEnumerator LoadLevel(string nameOfLevel)
     {
         transition.SetTrigger("Start");
-        player.HitSpikes(spikeDamage);
+        
+        bool died = player.HitSpikes(spikeDamage);
 
-        yield return new WaitForSeconds(transitionTime);
+        if(!died)
+        {
+            yield return new WaitForSeconds(transitionTime);
 
-        // Debug.Log(nameOfLevel);
+            // Debug.Log(nameOfLevel);
 
-        SceneManager.LoadScene(nameOfLevel);
+            SceneManager.LoadScene(nameOfLevel);
+        }
     }
 }

@@ -163,6 +163,7 @@ MonoBehaviour:
   - {fileID: 7698783293253185655}
   - {fileID: 7698783294275146132}
   hitboxSize: 1.7
+  detectionSize: 1.5
   playerDetectionSize: 20
   attackDamage: 3
   enemySpeed: 2

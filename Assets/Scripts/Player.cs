@@ -279,10 +279,16 @@ public class Player : MonoBehaviour
         StartCoroutine(MoveInDirection(direction));
     }
 
-    public void HitSpikes(int damage)
+    // Will return true if player dies from spikes, and false if not
+    public bool HitSpikes(int damage)
     {
         TakeDamage(damage, Vector2.zero);
+        if (PlayerHP.GetValue() <= 1) // Will die from the spikes
+        {
+            return true;
+        }
         StartCoroutine(MoveInDirection(Vector2.up));
+        return false;
     }
 
     private void Flip()
@@ -357,7 +363,16 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        Destroy(gameObject);
+        GameManager gm = FindObjectOfType<GameManager>();
+        if(gm)
+        {
+            gm.EndGame();
+            // Do a Death animation
+        } else
+        {
+            Debug.LogWarning("Game Manager Not Found, Make sure it transfered between stages");
+        }
+        
     }
 
     private float CalculateHitStun(Vector2 knockback)
