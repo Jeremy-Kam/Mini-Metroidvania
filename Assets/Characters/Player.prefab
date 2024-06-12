@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHP: {fileID: 11400000, guid: b6e13dea3371fb0448608a4bbd1c9bc0, type: 2}
   playerChangeHealth: {fileID: 11400000, guid: cd1775dfe1d8f2141af8c71644f05b72, type: 2}
+  wallJumpPower: {fileID: 11400000, guid: 330881ee251d5454492cdbf6b2a999bc, type: 2}
+  dashPower: {fileID: 11400000, guid: 764ad5c03e1f3d54cb2c8f6c9db06b7c, type: 2}
   maxSpeed: 10
   maxFallSpeed: 15
   wallSlidingSpeed: 4

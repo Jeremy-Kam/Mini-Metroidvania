@@ -177,3 +177,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: wallJumpPowerUp
+    clip: {fileID: 8300000, guid: 0d72a84a10d3fd843a043a68bfd1d7e6, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: dashPowerUp
+    clip: {fileID: 8300000, guid: 5a32367288c31514c80e3f24e8d5e8e0, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

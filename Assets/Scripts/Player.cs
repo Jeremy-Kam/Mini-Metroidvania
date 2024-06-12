@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     // Each "heart" counts as two health
     [SerializeField] private HP PlayerHP;
     [SerializeField] private GameEvent playerChangeHealth;
+    [SerializeField] private PowerUp wallJumpPower;
+    [SerializeField] private PowerUp dashPower;
 
     [SerializeField] private float maxSpeed;
     [SerializeField] private float maxFallSpeed;
@@ -138,7 +140,8 @@ public class Player : MonoBehaviour
         } else
         {
             // Wall Jumping
-            if(jumpBufferCounter > 0f && wallCoyoteTimeCounter > 0f)
+            // Only check if we have wallJumpPower at the end for performance
+            if(jumpBufferCounter > 0f && wallCoyoteTimeCounter > 0f && wallJumpPower.GetValue())
             {
                 // Debug.Log("Jumped");
                 rb2D.velocity = new Vector2(wallJumpForceX * lastWallTouched * -1, wallJumpForceY);
@@ -168,7 +171,7 @@ public class Player : MonoBehaviour
             rb2D.velocity = new Vector2(rb2D.velocity.x, (maxFallSpeed * -1));
         }
 
-        if(canDash && Input.GetButtonDown("Fire2"))
+        if(canDash && Input.GetButtonDown("Fire2") && dashPower.GetValue())
         {
             StartCoroutine("Dash");
         }
