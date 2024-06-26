@@ -7,6 +7,7 @@ public class PlayerPowerUp : MonoBehaviour
 {
     [SerializeField] private PowerUp powerUp;
     [SerializeField] private string soundName;
+    [SerializeField] private GameEvent pickupEvent;
 
     private void Start()
     {
@@ -28,6 +29,10 @@ public class PlayerPowerUp : MonoBehaviour
             {
                 powerUp.SetValue(true);
                 FindObjectOfType<AudioManager>().Play(soundName);
+                if(pickupEvent)
+                {
+                    pickupEvent.Raise();
+                }
             }
             Destroy(gameObject);
         }

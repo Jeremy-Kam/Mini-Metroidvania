@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &86573824
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 314944036244791231, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f384b9f82b997d48b532960aeb2d76b, type: 3}
+    - target: {fileID: 452757923802027757, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_Name
+      value: GunPowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8543586770152145243, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065618616016292063, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 11400000, guid: ad6f84637fa95a141a96fdce768d033c, type: 2}
+    - target: {fileID: 9065618616016292063, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
+      propertyPath: soundName
+      value: shotgunPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91d74b34842b87d4b837e3cec38a6c5e, type: 3}
 --- !u!1001 &177355551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,11 +611,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202399539213543306, guid: 2ab7adc782d56fa4aaf71b787a3a2b39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.005394
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3202399539213543306, guid: 2ab7adc782d56fa4aaf71b787a3a2b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.99196583
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3202399539213543306, guid: 2ab7adc782d56fa4aaf71b787a3a2b39, type: 3}
       propertyPath: m_LocalPosition.z

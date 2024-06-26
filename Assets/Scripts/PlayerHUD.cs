@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class PlayerHUD : MonoBehaviour
 {
     [SerializeField] private HP PlayerHealth;
+    [SerializeField] private IntVariable gunIndex;
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite halfHeart;
     [SerializeField] private Sprite emptyHeart;
 
+    [SerializeField] private GunUI gunUI1;
+
     private void Start()
     {
         UpdateHearts();
+        UpdateGunUI();
     }
 
     public void UpdateHearts()
@@ -42,5 +46,11 @@ public class PlayerHUD : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+    }
+
+    public void UpdateGunUI()
+    {
+        Debug.Log("Changed Weapon: " + gunIndex.GetValue());
+        gunUI1.playGunSelect();
     }
 }

@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     // Each "heart" counts as two health
     [SerializeField] private HP PlayerHP;
+    [SerializeField] private IntVariable gunIndex;
+    [SerializeField] private GameEvent playerChangeGun;
     [SerializeField] private GameEvent playerChangeHealth;
     [SerializeField] private PowerUp wallJumpPower;
     [SerializeField] private PowerUp dashPower;
@@ -97,6 +99,7 @@ public class Player : MonoBehaviour
         }
         
         Move();
+        CheckGunSwitch();
 
         // Debug.Log("Drag 2: " + rb2D.drag);
 
@@ -381,6 +384,29 @@ public class Player : MonoBehaviour
     private float CalculateHitStun(Vector2 knockback)
     {
         return (float)Math.Sqrt((knockback.x * knockback.x) + (knockback.y * knockback.y)) / 65;
+    }
+
+    private void CheckGunSwitch()
+    {
+        // Uses KeyDown instead of just Key as it would return true every frame. This only returns true the frame it is pressed, and needs to be released before it can return true again.
+        // This code kinda sucks, but I don't want to make it better
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            gunIndex.SetValue(1);
+            playerChangeGun.Raise();
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            gunIndex.SetValue(2);
+            playerChangeGun.Raise();
+        } else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            gunIndex.SetValue(3);
+            playerChangeGun.Raise();
+        } else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            gunIndex.SetValue(4);
+            playerChangeGun.Raise();
+        }
     }
 
     private IEnumerator Dash()

@@ -189,3 +189,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: magnumPickup
+    clip: {fileID: 8300000, guid: 005cc2ff4528f8e4891c4900ee500916, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shotgunPickup
+    clip: {fileID: 8300000, guid: f3bd9fe5e9f366d46b2f53e2290f6592, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RPGPickup
+    clip: {fileID: 8300000, guid: 2f435a2c5bce5b149a096962918c2889, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

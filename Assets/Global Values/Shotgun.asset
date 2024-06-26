@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aa61d01561fc03499ff9e70a052801b, type: 3}
-  m_Name: WallJump
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
   initialValue: 0
   value: 0
