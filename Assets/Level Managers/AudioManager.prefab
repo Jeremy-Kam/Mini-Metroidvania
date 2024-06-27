@@ -207,3 +207,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: magnumShoot
+    clip: {fileID: 8300000, guid: 4898c3cef623db34b93bd95b8ad92222, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: noGun
+    clip: {fileID: 8300000, guid: 1244f8a3a8b63e54e9602bb5bbe39f3d, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

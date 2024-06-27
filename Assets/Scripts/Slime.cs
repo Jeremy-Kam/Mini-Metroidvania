@@ -36,7 +36,7 @@ public class Slime : MonoBehaviour
             {
                 if (isGrounded())
                 {
-                    Debug.Log("Land");
+                    // Debug.Log("Land");
                     animator.SetBool("isLanding", true);
                     
                     isJumping = false;

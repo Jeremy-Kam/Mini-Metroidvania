@@ -22,7 +22,7 @@ public class GunUIIcon : MonoBehaviour
     // Needs to be called when we pick up a gun
     public void UpdateStatus()
     {
-        Debug.Log("Updated Gun UI: " + gotGun.GetValue());
+        // Debug.Log("Updated Gun UI: " + gotGun.GetValue());
         image.enabled = gotGun.GetValue();
     }
 }

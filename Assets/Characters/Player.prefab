@@ -212,9 +212,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4732136368886895223}
-  bulletPrefab: {fileID: 3111043338341144708, guid: 91f645f643ab80a42b07ec238d2598e8, type: 3}
-  attackRate: 5
+  pistolBulletPrefab: {fileID: 3111043338341144708, guid: 91f645f643ab80a42b07ec238d2598e8, type: 3}
+  magnumBulletPrefab: {fileID: 0}
+  shotgunBulletPrefab: {fileID: 0}
+  RPGBulletPrefab: {fileID: 0}
+  pistol: {fileID: 11400000, guid: 16eaefb5bdfd81045ae18a76e9f130c7, type: 2}
+  magnum: {fileID: 11400000, guid: 042c9fb78ca3b064d85f1a4faa4576e4, type: 2}
+  shotgun: {fileID: 11400000, guid: ad6f84637fa95a141a96fdce768d033c, type: 2}
+  rocketLauncher: {fileID: 11400000, guid: b6e6c77ee2af73d4aa37cb8171a1e2aa, type: 2}
+  attackRate:
+  - 5
+  - 2
+  - 1.5
+  - 1
   attackBufferTime: 0.2
+  gunIndex: {fileID: 11400000, guid: 5c3b16d90033e37409e5e6205f3d628d, type: 2}
 --- !u!114 &3521992740214102160
 MonoBehaviour:
   m_ObjectHideFlags: 0
