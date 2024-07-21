@@ -507,7 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431c62218cfeb9147b6a0795cad81eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunAnimator: {fileID: 7457243587315101474}
+  imageCanvas: {fileID: 5804330946872470248}
+  fakeRenderer: {fileID: 6575635190326828511}
+  animator: {fileID: 7457243587315101474}
 --- !u!1 &4900508204709670017
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +731,11 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: 873adacf51041a548a0e96a3121dc0f1, type: 3}
   halfHeart: {fileID: 21300000, guid: 4961e2d98598a2d4dac7f48e5ae4bb93, type: 3}
   emptyHeart: {fileID: 21300000, guid: 88203cbed34414c419324830ad442cdc, type: 3}
-  gunUI1: {fileID: 4696370900266457847}
+  gunUI:
+  - {fileID: 4696370900266457847}
+  - {fileID: 5263632534618880813}
+  - {fileID: 2030784305159619175}
+  - {fileID: 6472719036669765037}
 --- !u!114 &7121203318448140039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1681,7 @@ GameObject:
   - component: {fileID: 7127647198510945024}
   - component: {fileID: 4420947189613240688}
   - component: {fileID: 1234204434729344626}
+  - component: {fileID: 5263632534618880813}
   m_Layer: 0
   m_Name: Gun Selection 2
   m_TagString: Untagged
@@ -1812,6 +1819,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5263632534618880813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6392111251983993151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c62218cfeb9147b6a0795cad81eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCanvas: {fileID: 1234204434729344626}
+  fakeRenderer: {fileID: 8308939797667329694}
+  animator: {fileID: 7127647198510945024}
 --- !u!1 &7182049429023212994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,6 +1847,7 @@ GameObject:
   - component: {fileID: 8435761324069299384}
   - component: {fileID: 6793604783069602909}
   - component: {fileID: 878710092202731913}
+  - component: {fileID: 6472719036669765037}
   m_Layer: 0
   m_Name: Gun Selection 4
   m_TagString: Untagged
@@ -1962,6 +1985,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6472719036669765037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182049429023212994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c62218cfeb9147b6a0795cad81eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCanvas: {fileID: 878710092202731913}
+  fakeRenderer: {fileID: 7450581120907478774}
+  animator: {fileID: 8435761324069299384}
 --- !u!1 &7471826150764149698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +2013,7 @@ GameObject:
   - component: {fileID: 4552826085797363247}
   - component: {fileID: 2621452564935237330}
   - component: {fileID: 8597167522269546362}
+  - component: {fileID: 2030784305159619175}
   m_Layer: 0
   m_Name: Gun Selection 3
   m_TagString: Untagged
@@ -2112,3 +2151,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2030784305159619175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471826150764149698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c62218cfeb9147b6a0795cad81eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCanvas: {fileID: 8597167522269546362}
+  fakeRenderer: {fileID: 7942440231208901153}
+  animator: {fileID: 4552826085797363247}

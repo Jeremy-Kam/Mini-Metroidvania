@@ -12,7 +12,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private Sprite halfHeart;
     [SerializeField] private Sprite emptyHeart;
 
-    [SerializeField] private GunUI gunUI1;
+    [SerializeField] private GunUI[] gunUI;
 
     private void Start()
     {
@@ -51,6 +51,6 @@ public class PlayerHUD : MonoBehaviour
     public void UpdateGunUI()
     {
         Debug.Log("Changed Weapon: " + gunIndex.GetValue());
-        gunUI1.playGunSelect();
+        gunUI[gunIndex.GetValue() - 1].playGunSelect();
     }
 }
