@@ -63,7 +63,7 @@ public class Weapon : MonoBehaviour
                 if (magnum.GetValue())
                 {
                     FindObjectOfType<AudioManager>().Play("magnumShoot");
-                    // Instantiate(magnumBulletPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(magnumBulletPrefab, firePoint.position, firePoint.rotation);
                 } else
                 {
                     FindObjectOfType<AudioManager>().Play("noGun");
