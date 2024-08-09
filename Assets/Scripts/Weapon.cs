@@ -74,7 +74,7 @@ public class Weapon : MonoBehaviour
                 if (shotgun.GetValue())
                 {
                     FindObjectOfType<AudioManager>().Play("shotgunShoot");
-                    // Instantiate(shotgunBulletPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(shotgunBulletPrefab, firePoint.position, firePoint.rotation);
                 } else
                 {
                     FindObjectOfType<AudioManager>().Play("noGun");

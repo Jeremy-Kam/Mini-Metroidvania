@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Vector2 knockback;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float bulletRange;
+    [SerializeField] private string bulletSoundEffect;
 
     [SerializeField] private GameObject impactEffect;
 
@@ -55,7 +56,7 @@ public class Bullet : MonoBehaviour
             BreakableTile bt = collision.GetComponent<BreakableTile>();
             if (bt != null)
             {
-                FindObjectOfType<AudioManager>().Play("pistolHit");
+                FindObjectOfType<AudioManager>().Play(bulletSoundEffect);
                 bt.TakeDamage(damage);
             }
             Instantiate(impactEffect, transform.position, transform.rotation);
@@ -68,7 +69,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
             {
-                FindObjectOfType<AudioManager>().Play("pistolHit");
+                FindObjectOfType<AudioManager>().Play(bulletSoundEffect);
                 enemy.TakeDamage(damage, knockback);
 
             }
@@ -82,7 +83,7 @@ public class Bullet : MonoBehaviour
             Switch s = collision.GetComponent<Switch>();
             if (s != null)
             {
-                FindObjectOfType<AudioManager>().Play("pistolHit");
+                FindObjectOfType<AudioManager>().Play(bulletSoundEffect);
                 s.ToggleSwitch();
             }
             Instantiate(impactEffect, transform.position, transform.rotation);

@@ -50,7 +50,7 @@ public class PlayerHUD : MonoBehaviour
 
     public void UpdateGunUI()
     {
-        Debug.Log("Changed Weapon: " + gunIndex.GetValue());
+        // Debug.Log("Changed Weapon: " + gunIndex.GetValue());
         gunUI[gunIndex.GetValue() - 1].playGunSelect();
     }
 }

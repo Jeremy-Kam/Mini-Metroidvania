@@ -219,3 +219,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: shotgunHit
+    clip: {fileID: 8300000, guid: 645f446a312fb4a4da401f7b8a44ea5b, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

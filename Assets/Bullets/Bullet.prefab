@@ -142,6 +142,7 @@ MonoBehaviour:
   knockback: {x: 50, y: 10}
   rb: {fileID: 5425555372599522385}
   bulletRange: 6.5
+  bulletSoundEffect: pistolHit
   impactEffect: {fileID: 8975879912295745880, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
   playerPrefab: {fileID: 4732136370366032409, guid: 3d0b4615408cb6b40be0d659533bff28, type: 3}
 --- !u!95 &8553037712322266394

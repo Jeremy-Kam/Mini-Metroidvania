@@ -99,5 +99,9 @@ PrefabInstance:
       propertyPath: impactEffect
       value: 
       objectReference: {fileID: 8734193168100763651, guid: 32c35bed2dc5bd34a8cf1304846ab6ad, type: 3}
+    - target: {fileID: 8933812191814903992, guid: 91f645f643ab80a42b07ec238d2598e8, type: 3}
+      propertyPath: bulletSoundEffect
+      value: magnumHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f645f643ab80a42b07ec238d2598e8, type: 3}
