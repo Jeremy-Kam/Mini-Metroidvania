@@ -237,4 +237,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   bulletSoundEffect: shotgunHit
-  impactEffect: {fileID: 8975879912295745880, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
+  impactEffect: {fileID: 149136146088067797, guid: 2752b08d9ba97754f9cdf53db11079ed, type: 3}
