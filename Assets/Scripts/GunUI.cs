@@ -40,6 +40,6 @@ public class GunUI : MonoBehaviour
     public void playGunSelect()
     {
         animator.SetTrigger("GunSelect");
-        Debug.Log("Play animation");
+        // Debug.Log("Play animation");
     }
 }

@@ -85,7 +85,7 @@ public class Weapon : MonoBehaviour
                 if (rocketLauncher.GetValue())
                 {
                     FindObjectOfType<AudioManager>().Play("rpgShoot");
-                    // Instantiate(RPGBulletPrefab, firePoint.position, firePoint.rotation);
+                    Instantiate(RPGBulletPrefab, firePoint.position, firePoint.rotation);
                 } else
                 {
                     FindObjectOfType<AudioManager>().Play("noGun");

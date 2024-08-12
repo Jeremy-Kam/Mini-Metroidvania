@@ -55,6 +55,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // Damage that needs to take into account the thing that hit it
+    public void TakeDirectionalDamage(int damage, float force, Transform damageDealer)
+    {
+        health -= damage;
+
+        Vector2 heading = this.transform.position - damageDealer.position;
+        float distance = heading.magnitude;
+        Vector2 direction = heading / distance; // This is now the normalized direction.
+
+        rb2D.AddForce(direction * force, ForceMode2D.Impulse);
+
+        healthBar.SetHealth(health);
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
     
     public void Flip()
     {

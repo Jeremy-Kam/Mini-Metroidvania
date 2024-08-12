@@ -216,7 +216,7 @@ MonoBehaviour:
   pistolBulletPrefab: {fileID: 3111043338341144708, guid: 91f645f643ab80a42b07ec238d2598e8, type: 3}
   magnumBulletPrefab: {fileID: 7890198499463853682, guid: aafd74e7a006d7347b1ee8d262c4beed, type: 3}
   shotgunBulletPrefab: {fileID: 8357102733269607000, guid: b8d8dfd8d91efcd408dc87fe13f20558, type: 3}
-  RPGBulletPrefab: {fileID: 0}
+  RPGBulletPrefab: {fileID: 8115775835771056972, guid: 0c538296b430d8841a02124833be4fa2, type: 3}
   pistol: {fileID: 11400000, guid: 16eaefb5bdfd81045ae18a76e9f130c7, type: 2}
   magnum: {fileID: 11400000, guid: 042c9fb78ca3b064d85f1a4faa4576e4, type: 2}
   shotgun: {fileID: 11400000, guid: ad6f84637fa95a141a96fdce768d033c, type: 2}
