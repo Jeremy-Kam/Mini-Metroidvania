@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class ProgressManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class ProgressManager : MonoBehaviour
     private static Dictionary<string, bool> breakableWallList = new Dictionary<string, bool>();
 
     // Doors handled by enemyManager will not appear or be registered into the doorList
+
+    // There is only one mirror in the entire game
+    private static bool mirrorHasTriggered;
 
     private void Awake()
     {
@@ -158,5 +162,21 @@ public class ProgressManager : MonoBehaviour
         {
             Debug.Log("This breakable tile is not yet registered. Please register this breakable tile");
         }
+    }
+
+    public void UpdateMirror()
+    {
+        GameObject[] mirror = GameObject.FindGameObjectsWithTag("Mirror");
+
+        // Should only ever be one mirror
+        if(mirror.Length != 0)
+        {
+            mirror[0].GetComponent<Mirror>().UpdateState(mirrorHasTriggered);
+        }
+    }
+
+    public void SetMirrorTriggered(bool hasTriggered)
+    {
+        mirrorHasTriggered = hasTriggered;
     }
 }

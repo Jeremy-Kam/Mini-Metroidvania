@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8975879912295745880, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
       propertyPath: m_Name
-      value: Bullet Hit Effect
+      value: Magnum Bullet Hit Effect Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8975879912295745882, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
       propertyPath: m_Sprite
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975879912295745893, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8975879912295745893, guid: f4ce2923e5890844787915f7840a3bc5, type: 3}
       propertyPath: m_LocalRotation.w

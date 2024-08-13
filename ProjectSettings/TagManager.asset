@@ -15,11 +15,12 @@ TagManager:
   - Switch
   - BreakableWall
   - Shield
+  - Mirror
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Player
