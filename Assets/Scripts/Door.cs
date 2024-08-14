@@ -40,6 +40,7 @@ public class Door : MonoBehaviour
             {
                 doorController.SetBool("shouldClose", true);
                 GetComponent<Collider2D>().enabled = true;
+                FindObjectOfType<AudioManager>().Play("doorClosing");
             }
         }
     }

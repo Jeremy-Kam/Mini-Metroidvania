@@ -17,6 +17,7 @@ public class BossDoor : MonoBehaviour
 
     public void UpdateState(bool isOpen)
     {
+        bool wasOpen = this.isOpen;
         this.isOpen = isOpen;
 
         // Fpr when non progress manager objects change door status
@@ -34,6 +35,10 @@ public class BossDoor : MonoBehaviour
             {
                 doorController.SetBool("shouldClose", true);
                 doorCollider.enabled = true;
+                if(wasOpen)
+                {
+                    FindObjectOfType<AudioManager>().Play("doorClosing");
+                }
             }
         }
     }
