@@ -50,13 +50,6 @@ public class Level_Loader : MonoBehaviour
 
         SceneManager.LoadScene(nameOfLevel);
 
-        // If the player enters TopMiddle, then door5 from Main should be open for the rest of the game
-
-        if(nameOfLevel == "TopMiddle")
-        {
-            FindObjectOfType<ProgressManager>().RegisterDoor("Door5", true);
-        }
-
         spawnIndex.setValue(levelToLoadIndex);
     }
 }

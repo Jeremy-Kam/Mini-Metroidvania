@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SpawnLocationIndex spawnIndex;
 
     [SerializeField] private Animator transition;
-    [SerializeField] float transitionTime = 1f;
+    [SerializeField] float transitionTime = 0.5f;
 
     [SerializeField] private string levelToLoadName;
 

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4b4ef0e5dcd6640a6daf1c05438485, type: 3}
   m_Name: SpawnIndex
   m_EditorClassIdentifier: 
-  initialValue: 1
-  runtimeValue: 1
+  initialValue: 0
+  runtimeValue: 0

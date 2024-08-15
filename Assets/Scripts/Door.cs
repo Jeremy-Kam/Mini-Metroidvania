@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
     {
         this.isOpen = isOpen;
 
-        // Fpr when non progress manager objects change door status
+        // For when non progress manager objects change door status
         // pm.UpdateDoorList(uniqueID, isOpen);
 
         // Animation
@@ -40,7 +40,6 @@ public class Door : MonoBehaviour
             {
                 doorController.SetBool("shouldClose", true);
                 GetComponent<Collider2D>().enabled = true;
-                FindObjectOfType<AudioManager>().Play("doorClosing");
             }
         }
     }
