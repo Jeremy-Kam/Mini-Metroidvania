@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3269596155474632781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821291, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821456, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 268674003040b974f92d41ce7076f15c, type: 2}
+    - target: {fileID: 8382904467440821457, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Name
+      value: Boss Bullet Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821460, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2081282550, guid: c56e4577498915c41adb14b0ecfc7eba, type: 3}
+    - target: {fileID: 8382904467440821462, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Size.x
+      value: 2.381283
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821462, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7347347
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821462, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.7092027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821462, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0000016439914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821462, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821463, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821463, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: bulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821463, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: knockback.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821463, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: knockback.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382904467440821463, guid: f4a5779f7900cf5479cc680332992a87, type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4a5779f7900cf5479cc680332992a87, type: 3}

@@ -11,6 +11,8 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] float[] hitboxSize;
     [SerializeField] float playerDetectionSize;
 
+    [SerializeField] Transform firePoint;
+
     [SerializeField] Transform swingAttackDetectionPoint;
     [SerializeField] float swingAttackDetectionSize;
 
@@ -19,9 +21,10 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private Vector2 knockback;
     [SerializeField] private float playerDetectionDeadzone;
 
-    private bool isSwinging = false;
-    private bool isShooting = false;
-    private bool isAreaAttacking = false;
+    [SerializeField] GameObject projectilePrefab;
+
+    // 0 is idle, 1 is swinging, 2 is shooting, 3 is areaAttacking
+    private int state = 0;
 
     private void Move()
     {
@@ -88,11 +91,11 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!isSwinging)
+        if (state == 0)
         {
             if (detectedPlayer())
             {
-                Attack();
+                SwingAttack();
             }
             else if (SeePlayer())
             {
@@ -105,9 +108,9 @@ public class FinalBoss : MonoBehaviour
         }
     }
 
-    private void Attack()
+    private void SwingAttack()
     {
-        isSwinging = true;
+        state = 1;
         GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
         animator.SetTrigger("Swing");
     }
@@ -139,6 +142,8 @@ public class FinalBoss : MonoBehaviour
             }
             hit.GetComponent<Player>().TakeDamage(attackDamage, temp);
         }
+
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 
     private bool detectedPlayer()
@@ -171,19 +176,9 @@ public class FinalBoss : MonoBehaviour
         return false;
     }
 
-    private void endSwingAttack()
+    private void backToIdle()
     {
-        isSwinging = false;
-    }
-
-    private void endShootingAttack()
-    {
-        isShooting = false;
-    }
-
-    private void endAreaAttack()
-    {
-        isAreaAttacking = false;
+        state = 0;
     }
 
     private void OnDrawGizmosSelected()

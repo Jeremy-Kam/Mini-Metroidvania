@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &146230125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146230126}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146230126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146230125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: 0.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7250360913761052036}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847601687
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,9 +170,9 @@ GameObject:
   - component: {fileID: 7250360913761052034}
   - component: {fileID: 7250360913761052037}
   - component: {fileID: 7250360913761052032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Final Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +194,7 @@ Transform:
   - {fileID: 1128981692}
   - {fileID: 1175888324}
   - {fileID: 1090038087}
+  - {fileID: 146230126}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -250,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ff8f927c18d664a9b8de67937e8dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 75
   healthBar: {fileID: 4404064820600909408}
   healthDrop: {fileID: 11400000, guid: 03bd94fed83595344bd78c92e9ec8005, type: 2}
   heartPrefab: {fileID: 8157337426942509361, guid: 6ce7c26fb45623f4e93d969222cb2fd8, type: 3}
@@ -320,12 +352,14 @@ MonoBehaviour:
   - 0.6
   - 0.3
   playerDetectionSize: 20
+  firePoint: {fileID: 146230126}
   swingAttackDetectionPoint: {fileID: 1090038087}
   swingAttackDetectionSize: 0.3
   attackDamage: 4
   enemySpeed: 7
   knockback: {x: 30, y: 30}
   playerDetectionDeadzone: 0.5
+  projectilePrefab: {fileID: 6415939878425724060, guid: 1b51f14798b15f94c879e679a10b38b5, type: 3}
 --- !u!1001 &7250360913607803957
 PrefabInstance:
   m_ObjectHideFlags: 0

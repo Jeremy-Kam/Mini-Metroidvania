@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa61d01561fc03499ff9e70a052801b, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  initialValue: 0
+  initialValue: 1
   value: 1

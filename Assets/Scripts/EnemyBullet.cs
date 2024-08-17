@@ -32,7 +32,11 @@ public class EnemyBullet : MonoBehaviour
                 // FindObjectOfType<AudioManager>().Play("pistolHit");
                 bt.TakeDamage(damage);
             }
-            Instantiate(impactEffect, transform.position, transform.rotation);
+            if(impactEffect)
+            {
+                Instantiate(impactEffect, transform.position, transform.rotation);
+            }
+            
             Destroy(gameObject);
         }
 
@@ -46,7 +50,11 @@ public class EnemyBullet : MonoBehaviour
                 player.TakeDamage(damage, knockback);
 
             }
-            Instantiate(impactEffect, transform.position, transform.rotation);
+            if (impactEffect)
+            {
+                Instantiate(impactEffect, transform.position, transform.rotation);
+            }
+
             Destroy(gameObject);
         }
 
@@ -59,7 +67,11 @@ public class EnemyBullet : MonoBehaviour
                 // FindObjectOfType<AudioManager>().Play("pistolHit");
                 s.ToggleSwitch();
             }
-            Instantiate(impactEffect, transform.position, transform.rotation);
+            if (impactEffect)
+            {
+                Instantiate(impactEffect, transform.position, transform.rotation);
+            }
+
             Destroy(gameObject);
         }
     }
