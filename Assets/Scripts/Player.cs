@@ -315,7 +315,16 @@ public class Player : MonoBehaviour
         PlayerHP.SetValue(PlayerHP.GetValue() - damage);
         playerChangeHealth.Raise();
 
-        FindObjectOfType<AudioManager>().Play("playerHit");
+        if(damage <= 2)
+        {
+            FindObjectOfType<AudioManager>().Play("playerHit");
+        } else if (damage <= 4)
+        {
+            FindObjectOfType<AudioManager>().Play("criticalHit");
+        } else
+        {
+            FindObjectOfType<AudioManager>().Play("explosionHit");
+        }
 
         StartCoroutine(Stun(CalculateHitStun(knockback)));
         if(isDashing)

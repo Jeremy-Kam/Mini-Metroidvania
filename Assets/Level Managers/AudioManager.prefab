@@ -225,3 +225,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: finalBossSwing
+    clip: {fileID: 8300000, guid: 632710d7b2f74194b920d4f881aaeae6, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: criticalHit
+    clip: {fileID: 8300000, guid: 77a68daaf9621f14d9ee1589d9c3e1e3, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: explosionHit
+    clip: {fileID: 8300000, guid: 7ecd2df6d40c7be4f9acdc09e8e5d26d, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

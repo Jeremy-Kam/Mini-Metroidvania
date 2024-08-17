@@ -5,15 +5,23 @@ using System;
 public class FinalBoss : MonoBehaviour
 {
     [SerializeField] Animator animator;
+
+    // These two arrays MUST have the same size or else bad things happen
     [SerializeField] Transform[] attackPoints; // Index 0 is detecting point
-    [SerializeField] float hitboxSize;
+    [SerializeField] float[] hitboxSize;
     [SerializeField] float playerDetectionSize;
+
+    [SerializeField] Transform swingAttackDetectionPoint;
+    [SerializeField] float swingAttackDetectionSize;
+
     [SerializeField] int attackDamage;
     [SerializeField] float enemySpeed;
     [SerializeField] private Vector2 knockback;
     [SerializeField] private float playerDetectionDeadzone;
 
-    private bool isAttacking = false;
+    private bool isSwinging = false;
+    private bool isShooting = false;
+    private bool isAreaAttacking = false;
 
     private void Move()
     {
@@ -50,10 +58,37 @@ public class FinalBoss : MonoBehaviour
         }
     }
 
+    // Used for the swing attack, where the boss does not move, but needs to face the player.
+    private void FacePlayer()
+    {
+        GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
+
+        if (GetComponent<Enemy>().player.transform.position.x < ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x)))
+        {
+            if (Math.Abs(GetComponent<Enemy>().player.transform.position.x - ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x))) > playerDetectionDeadzone)
+            {
+                if (GetComponent<Enemy>().facingRight)
+                {
+                    GetComponent<Enemy>().Flip();
+                }
+            }
+        }
+        else if (GetComponent<Enemy>().player.transform.position.x > ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x)))
+        {
+            if (Math.Abs(GetComponent<Enemy>().player.transform.position.x - ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x))) > playerDetectionDeadzone)
+            {
+                if (!GetComponent<Enemy>().facingRight)
+                {
+                    GetComponent<Enemy>().Flip();
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     private void Update()
     {
-        if (!isAttacking)
+        if (!isSwinging)
         {
             if (detectedPlayer())
             {
@@ -64,28 +99,30 @@ public class FinalBoss : MonoBehaviour
                 // Debug.Log(player);
                 Move();
             }
+        } else
+        {
+            FacePlayer();
         }
     }
 
     private void Attack()
     {
-        isAttacking = true;
+        isSwinging = true;
         GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
         animator.SetTrigger("Swing");
     }
+
     private void Swing()
     {
-        /*
-        
         HashSet<Collider2D> uniqueHits = new HashSet<Collider2D>();
 
         List<Collider2D> hits = new List<Collider2D>();
 
-        FindObjectOfType<AudioManager>().Play("swordAttack");
+        FindObjectOfType<AudioManager>().Play("finalBossSwing");
 
-        foreach (Transform hitboxPos in attackPoints)
+        for(int i = 0; i < attackPoints.Length; ++i)
         {
-            hits.AddRange(Physics2D.OverlapCircleAll(hitboxPos.position, hitboxSize, GetComponent<Enemy>().playerLayer));
+            hits.AddRange(Physics2D.OverlapCircleAll(attackPoints[i].position, hitboxSize[i], GetComponent<Enemy>().playerLayer));
         }
 
         foreach (Collider2D hit in hits)
@@ -102,16 +139,11 @@ public class FinalBoss : MonoBehaviour
             }
             hit.GetComponent<Player>().TakeDamage(attackDamage, temp);
         }
-
-        */
     }
-
-
 
     private bool detectedPlayer()
     {
-        /*
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoints[0].position, hitboxSize, GetComponent<Enemy>().playerLayer);
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(swingAttackDetectionPoint.position, swingAttackDetectionSize, GetComponent<Enemy>().playerLayer);
         foreach (Collider2D hit in hitPlayers)
         {
             if (hit)
@@ -120,8 +152,6 @@ public class FinalBoss : MonoBehaviour
             }
         }
 
-        return false;
-        */
         return false;
     }
 
@@ -141,24 +171,56 @@ public class FinalBoss : MonoBehaviour
         return false;
     }
 
-    private void endAttacking()
+    private void endSwingAttack()
     {
-        isAttacking = false;
+        isSwinging = false;
+    }
+
+    private void endShootingAttack()
+    {
+        isShooting = false;
+    }
+
+    private void endAreaAttack()
+    {
+        isAreaAttacking = false;
     }
 
     private void OnDrawGizmosSelected()
     {
-        /*
         if (attackPoints == null)
         {
             return;
         }
-        foreach (Transform hitboxPos in attackPoints)
+        for(int i = 0; i < attackPoints.Length; ++i)
         {
-            Gizmos.DrawWireSphere(hitboxPos.position, hitboxSize);
+            Gizmos.DrawWireSphere(attackPoints[i].position, hitboxSize[i]);
         }
 
-        Gizmos.DrawWireSphere(transform.position, playerDetectionSize);
-        */
+        Gizmos.DrawWireSphere(swingAttackDetectionPoint.position, swingAttackDetectionSize);
+
+        // Gizmos.DrawWireSphere(transform.position, playerDetectionSize);
     }
+
+    // From Weapons.cs, to kinda get the buffer system.
+    /*
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            attackBufferCounter = attackBufferTime;
+        }
+        else
+        {
+            attackBufferCounter -= Time.deltaTime;
+        }
+
+        if (attackBufferCounter > 0 && Time.time >= nextAttackTime)
+        {
+            Shoot();
+            // The minus one is because gunIndex is 1-indexed, while the array is zero indexed
+            nextAttackTime = Time.time + (1f / attackRate[gunIndex.GetValue() - 1]);
+        }
+    }
+    */
 }
