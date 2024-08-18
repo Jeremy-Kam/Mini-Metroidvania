@@ -16,7 +16,6 @@ public class ProjectileEnemy : MonoBehaviour
 
     private bool isAttacking = false;
 
-
     private void Update()
     {
         if(!isAttacking)

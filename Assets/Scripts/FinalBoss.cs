@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 public class FinalBoss : MonoBehaviour
 {
     [SerializeField] Animator animator;
@@ -18,12 +19,18 @@ public class FinalBoss : MonoBehaviour
 
     [SerializeField] int attackDamage;
     [SerializeField] float enemySpeed;
+    [SerializeField] float shootingSpeedScalingFactor;
     [SerializeField] private Vector2 knockback;
     [SerializeField] private float playerDetectionDeadzone;
 
-    [SerializeField] GameObject projectilePrefab;
+    // If the boss does not get close enough to the player to proc an attack normally for a certain amount of time, it will just attack
+    [SerializeField] private float randomAttackRate;
+    [SerializeField] private float nextAttackTime; // This is the amount of seconds before the final boss will just attack
 
-    // 0 is idle, 1 is swinging, 2 is shooting, 3 is areaAttacking
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject smallProjectilePrefab;
+
+    // 0 is idle, 1 is swinging, 2 is shooting, 3 is shooting transition, 4 is area attacking
     private int state = 0;
 
     private void Move()
@@ -61,6 +68,42 @@ public class FinalBoss : MonoBehaviour
         }
     }
 
+    // For the shooting attack
+    private void MoveSlow()
+    {
+        if (GetComponent<Enemy>().player == null)
+        {
+            return;
+        }
+
+        if (GetComponent<Enemy>().player.transform.position.x < ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x)))
+        {
+            if (Math.Abs(GetComponent<Enemy>().player.transform.position.x - ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x))) > playerDetectionDeadzone)
+            {
+                if (GetComponent<Enemy>().facingRight)
+                {
+                    GetComponent<Enemy>().Flip();
+                }
+                GetComponent<Enemy>().rb2D.velocity = new Vector2((enemySpeed * shootingSpeedScalingFactor) * -1, GetComponent<Enemy>().rb2D.velocity.y);
+            }
+        }
+        else if (GetComponent<Enemy>().player.transform.position.x > ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x)))
+        {
+            if (Math.Abs(GetComponent<Enemy>().player.transform.position.x - ((GetComponent<Enemy>().facingRight) ? (transform.position.x + GetComponent<Enemy>().cap2D.offset.x) : (transform.position.x - GetComponent<Enemy>().cap2D.offset.x))) > playerDetectionDeadzone)
+            {
+                if (!GetComponent<Enemy>().facingRight)
+                {
+                    GetComponent<Enemy>().Flip();
+                }
+                GetComponent<Enemy>().rb2D.velocity = new Vector2((enemySpeed * shootingSpeedScalingFactor), GetComponent<Enemy>().rb2D.velocity.y);
+            }
+        }
+        else
+        {
+            GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
+        }
+    }
+
     // Used for the swing attack, where the boss does not move, but needs to face the player.
     private void FacePlayer()
     {
@@ -85,7 +128,7 @@ public class FinalBoss : MonoBehaviour
                     GetComponent<Enemy>().Flip();
                 }
             }
-        }
+        } 
     }
 
     // Update is called once per frame
@@ -95,17 +138,47 @@ public class FinalBoss : MonoBehaviour
         {
             if (detectedPlayer())
             {
-                SwingAttack();
+                Attack();
             }
             else if (SeePlayer())
             {
-                // Debug.Log(player);
+                // If we move for too long without attacking, then randomly attack
                 Move();
+                if (Time.time >= nextAttackTime)
+                {
+                    Attack();
+                }
             }
-        } else
+        } else if (state == 1)
         {
             FacePlayer();
+        } else if (state == 2)
+        {
+            MoveSlow();
+        } else if (state == 3)
+        {
+            // Stand still
+            GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
+        } else if (state == 4)
+        {
+            Debug.Log("Area Attack");
         }
+    }
+
+    private void Attack()
+    {
+        int randomNumber = UnityEngine.Random.Range(0, 2); // Should generate 0 or 1
+
+        if (randomNumber == 0)
+        {
+            SwingAttack();
+        }
+        else
+        {
+            ShootAttack();
+        }
+
+        nextAttackTime = Time.time + (1f / randomAttackRate);
     }
 
     private void SwingAttack()
@@ -144,6 +217,40 @@ public class FinalBoss : MonoBehaviour
         }
 
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    }
+
+    private void ShootAttack()
+    {
+        state = 3; // Stand still
+        animator.SetTrigger("Shoot");
+    }
+
+    private void Shoot()
+    {
+        state = 2; // Move slow
+        StartCoroutine(Shooting());
+    }
+
+    private IEnumerator Shooting()
+    {
+        for(int i = 0; i < 10; ++i)
+        {
+            Instantiate(smallProjectilePrefab, firePoint.position, firePoint.rotation);
+            FindObjectOfType<AudioManager>().Play("enemyBulletShoot2");
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        animator.SetTrigger("StopShoot");
+        state = 3; // Stand still
+    }
+
+    private Vector2 GetPlayerDirection()
+    {
+        Vector2 heading = firePoint.position - GetComponent<Enemy>().player.transform.position;
+        float distance = heading.magnitude;
+        Vector2 direction = heading / distance; // This is now the normalized direction.
+
+        return direction;
     }
 
     private bool detectedPlayer()
@@ -196,26 +303,4 @@ public class FinalBoss : MonoBehaviour
 
         // Gizmos.DrawWireSphere(transform.position, playerDetectionSize);
     }
-
-    // From Weapons.cs, to kinda get the buffer system.
-    /*
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            attackBufferCounter = attackBufferTime;
-        }
-        else
-        {
-            attackBufferCounter -= Time.deltaTime;
-        }
-
-        if (attackBufferCounter > 0 && Time.time >= nextAttackTime)
-        {
-            Shoot();
-            // The minus one is because gunIndex is 1-indexed, while the array is zero indexed
-            nextAttackTime = Time.time + (1f / attackRate[gunIndex.GetValue() - 1]);
-        }
-    }
-    */
 }

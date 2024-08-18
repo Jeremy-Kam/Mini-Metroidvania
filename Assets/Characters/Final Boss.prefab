@@ -357,9 +357,13 @@ MonoBehaviour:
   swingAttackDetectionSize: 0.3
   attackDamage: 4
   enemySpeed: 7
+  shootingSpeedScalingFactor: 0.5
   knockback: {x: 30, y: 30}
   playerDetectionDeadzone: 0.5
+  randomAttackRate: 0.3
+  nextAttackTime: 4
   projectilePrefab: {fileID: 6415939878425724060, guid: 1b51f14798b15f94c879e679a10b38b5, type: 3}
+  smallProjectilePrefab: {fileID: 8479116372645054299, guid: d2ddacb7e6113d744831dfafb19c405e, type: 3}
 --- !u!1001 &7250360913607803957
 PrefabInstance:
   m_ObjectHideFlags: 0
