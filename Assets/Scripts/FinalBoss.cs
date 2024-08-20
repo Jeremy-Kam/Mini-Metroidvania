@@ -142,8 +142,9 @@ public class FinalBoss : MonoBehaviour
             }
             else if (SeePlayer())
             {
-                // If we move for too long without attacking, then randomly attack
+                
                 Move();
+                // If we move for too long without attacking, then randomly attack
                 if (Time.time >= nextAttackTime)
                 {
                     Attack();
@@ -158,27 +159,26 @@ public class FinalBoss : MonoBehaviour
         } else if (state == 3)
         {
             // Stand still
+            // Used for area attack as well
             GetComponent<Enemy>().rb2D.velocity = new Vector2(0, GetComponent<Enemy>().rb2D.velocity.y);
-        } else if (state == 4)
-        {
-            Debug.Log("Area Attack");
         }
     }
 
     private void Attack()
     {
-        int randomNumber = UnityEngine.Random.Range(0, 2); // Should generate 0 or 1
+        int randomNumber = UnityEngine.Random.Range(0, 3); // Should generate 0, 1, 2
 
         if (randomNumber == 0)
         {
             SwingAttack();
         }
-        else
+        else if(randomNumber == 1)
         {
             ShootAttack();
+        } else if (randomNumber == 2)
+        {
+            AreaAttack();
         }
-
-        nextAttackTime = Time.time + (1f / randomAttackRate);
     }
 
     private void SwingAttack()
@@ -244,6 +244,26 @@ public class FinalBoss : MonoBehaviour
         state = 3; // Stand still
     }
 
+    private void AreaAttack()
+    {
+        state = 3; // Stand still
+        animator.SetTrigger("AreaAttack");
+    }
+
+    private void Area()
+    {
+        state = 3; // Keep standing still
+        StartCoroutine(AreaAttacking());
+    }
+
+    private IEnumerator AreaAttacking()
+    {
+        Debug.Log("Kaboom");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("StopAreaAttack");
+        state = 3; // Stand still
+    }
+
     private Vector2 GetPlayerDirection()
     {
         Vector2 heading = firePoint.position - GetComponent<Enemy>().player.transform.position;
@@ -286,6 +306,7 @@ public class FinalBoss : MonoBehaviour
     private void backToIdle()
     {
         state = 0;
+        nextAttackTime = Time.time + (1f / randomAttackRate);
     }
 
     private void OnDrawGizmosSelected()
