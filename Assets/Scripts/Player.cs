@@ -308,7 +308,7 @@ public class Player : MonoBehaviour
     {
         if(isInvincible)
         {
-            Debug.Log("Invincible");
+            FindObjectOfType<AudioManager>().Play("invincibleBlip");
             return;
         }
 

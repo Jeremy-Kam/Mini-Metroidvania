@@ -249,3 +249,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: winScreenBlip
+    clip: {fileID: 8300000, guid: 8d58075e77e58da47b8d56da719432db, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: invincibleBlip
+    clip: {fileID: 8300000, guid: 9238e732d2bcd64489d12f2b28dd762a, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
