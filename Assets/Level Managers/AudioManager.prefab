@@ -243,3 +243,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: areaAttack
+    clip: {fileID: 8300000, guid: c1c14900573e98745b008d9caf4572db, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

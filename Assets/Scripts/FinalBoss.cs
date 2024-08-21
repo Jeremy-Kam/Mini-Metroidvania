@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class FinalBoss : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] float shootingSpeedScalingFactor;
     [SerializeField] private Vector2 knockback;
     [SerializeField] private float playerDetectionDeadzone;
+
+    [SerializeField] private float areaAttackDeadzoneSize;
+    [SerializeField] private float areaAttackStartup;
+    [SerializeField] private int areaAttackDamage;
+    [SerializeField] private Vector2 areaAttackKnockback;
 
     // If the boss does not get close enough to the player to proc an attack normally for a certain amount of time, it will just attack
     [SerializeField] private float randomAttackRate;
@@ -258,8 +264,35 @@ public class FinalBoss : MonoBehaviour
 
     private IEnumerator AreaAttacking()
     {
-        Debug.Log("Kaboom");
-        yield return new WaitForSeconds(1f);
+        // GetComponentInChildren<AreaAttack>().gameObject.SetActive(true);
+
+        // index 6 is the area attack sprite
+        this.transform.GetChild(6).gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(areaAttackStartup);
+
+        HashSet<Collider2D> uniqueHits = new HashSet<Collider2D>();
+        List<Collider2D> hits = new List<Collider2D>();
+
+        FindObjectOfType<AudioManager>().Play("areaAttack");
+
+        hits.AddRange(Physics2D.OverlapCircleAll(transform.position, areaAttackDeadzoneSize, GetComponent<Enemy>().playerLayer));
+
+        foreach (Collider2D hit in hits)
+        {
+            uniqueHits.Add(hit);
+        }
+
+        // Outside the safe space
+        if(uniqueHits.ToArray().Length == 0)
+        {
+            GetComponent<Enemy>().player.GetComponent<Player>().TakeDamage(areaAttackDamage, areaAttackKnockback);
+        }
+
+        // GetComponentInChildren<AreaAttack>().gameObject.SetActive(false);
+
+        this.transform.GetChild(6).gameObject.SetActive(false);
+
         animator.SetTrigger("StopAreaAttack");
         state = 3; // Stand still
     }
@@ -321,6 +354,7 @@ public class FinalBoss : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(swingAttackDetectionPoint.position, swingAttackDetectionSize);
+        Gizmos.DrawWireSphere(transform.position, areaAttackDeadzoneSize);
 
         // Gizmos.DrawWireSphere(transform.position, playerDetectionSize);
     }

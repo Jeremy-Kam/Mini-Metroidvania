@@ -40,9 +40,6 @@ public class Boss0SpawnScript : MonoBehaviour
         Enemy Ghost1E = Instantiate(Ghost1.enemy, Ghost1.spawnPosition, Ghost1.spawnRotation);
         Ghost1E.SetUniqueID("Ghost1");
 
-
-
-
         while (em.GetEnemy("Boss0").isDead == false)
         {
             yield return new WaitForSeconds(2f);
