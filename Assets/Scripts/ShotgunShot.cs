@@ -78,7 +78,7 @@ public class ShotgunShot : MonoBehaviour
                         enemy.TakeDamage(damage[i], knockback[i]);
                         // Debug.Log("Shotgun did: " + damage[i] + " damage");
                         alreadyHit.Add(hit);
-                        Instantiate(impactEffect, hit.transform.position, hit.transform.rotation);
+                        Instantiate(impactEffect, hit.transform.position, hit.transform.rotation);                        
                     }
                     
                 }

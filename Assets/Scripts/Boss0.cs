@@ -7,6 +7,7 @@ public class Boss0 : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform[] attackPoints; // Index 0 is detecting point
+    [SerializeField] Transform swingPoint;
     [SerializeField] float hitboxSize;
     [SerializeField] float detectionSize;
     [SerializeField] float playerDetectionSize;
@@ -118,11 +119,9 @@ public class Boss0 : MonoBehaviour
         }
     }
 
-
-
     private bool detectedPlayer()
     {
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoints[0].position, detectionSize, GetComponent<Enemy>().playerLayer);
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(swingPoint.position, detectionSize, GetComponent<Enemy>().playerLayer);
         foreach (Collider2D hit in hitPlayers)
         {
             if (hit)
@@ -168,5 +167,6 @@ public class Boss0 : MonoBehaviour
         }
 
         Gizmos.DrawWireSphere(transform.position, playerDetectionSize);
+        Gizmos.DrawWireSphere(swingPoint.position, detectionSize);
     }
 }

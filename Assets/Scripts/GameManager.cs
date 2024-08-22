@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         if(!gameHasEnded)
         {
             gameHasEnded = true;
-            Debug.Log("Game Over");
+            // Debug.Log("Game Over");
             LoadNextLevel();
         }
     }
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
             spawnIndex.setValue(0);
         }
 
-        Debug.Log(nameOfLevel);
+        // Debug.Log(nameOfLevel);
         SceneManager.LoadScene(nameOfLevel);
     }
 

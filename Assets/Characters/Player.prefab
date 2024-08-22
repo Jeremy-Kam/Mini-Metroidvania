@@ -164,10 +164,10 @@ MonoBehaviour:
   maxSpeed: 10
   maxFallSpeed: 15
   wallSlidingSpeed: 4
-  groundAcceleration: 0.6
-  airAcceleration: 0.15
-  groundDeceleration: 0.2
-  airDeceleration: 0.05
+  groundAcceleration: 1.5
+  airAcceleration: 0.5
+  groundDeceleration: 1
+  airDeceleration: 0.5
   jumpForce: 20
   wallJumpForceX: 18
   wallJumpForceY: 16

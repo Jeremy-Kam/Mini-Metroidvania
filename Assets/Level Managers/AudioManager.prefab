@@ -250,7 +250,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: winScreenBlip
-    clip: {fileID: 8300000, guid: 8d58075e77e58da47b8d56da719432db, type: 3}
+    clip: {fileID: 8300000, guid: 445c1862fc468434c811646c79c51ca2, type: 3}
     volume: 0.4
     pitch: 1
     loop: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: emc1
   m_EditorClassIdentifier: 
   initialCompleted: 0
-  runtimeCompleted: 0
+  runtimeCompleted: 1

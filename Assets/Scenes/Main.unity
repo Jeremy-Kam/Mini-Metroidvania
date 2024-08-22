@@ -15921,7 +15921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44bf53ce43ac3347b261499b94ea62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashPower: {fileID: 11400000, guid: 764ad5c03e1f3d54cb2c8f6c9db06b7c, type: 2}
+  dash: {fileID: 11400000, guid: 764ad5c03e1f3d54cb2c8f6c9db06b7c, type: 2}
 --- !u!1001 &1802573168
 PrefabInstance:
   m_ObjectHideFlags: 0

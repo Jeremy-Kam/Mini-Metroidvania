@@ -72,17 +72,19 @@ public class Player : MonoBehaviour
         originalDrag = rb2D.drag;
     }
 
-    // Update is called once per frame
-    void Update()
+    // All input checking is put into Update
+    private void Update()
     {
-        if(isLeavingLevel || isInHitstun)
+        if (isLeavingLevel || isInHitstun)
         {
             return;
         }
-        
-        if(isDashing)
+
+        CheckGunSwitch();
+
+        if (isDashing)
         {
-            if(isNextToLeftWall() || isNextToRightWall())
+            if (isNextToLeftWall() || isNextToRightWall())
             {
                 StopCoroutine("Dash");
                 rb2D.drag = originalDrag;
@@ -92,23 +94,20 @@ public class Player : MonoBehaviour
                 canDash = true;
 
                 // Debug.Log("Drag reset to: " + rb2D.drag);
-            } else
+            }
+            else
             {
                 return;
             }
         }
-        
-        Move();
-        CheckGunSwitch();
-
-        // Debug.Log("Drag 2: " + rb2D.drag);
 
         if (isGrounded())
         {
             coyoteTimeCounter = coyoteTime;
             lastWallTouched = 0;
             canDash = true;
-        } else
+        }
+        else
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
@@ -118,7 +117,8 @@ public class Player : MonoBehaviour
             wallCoyoteTimeCounter = wallCoyoteTime;
             lastWallTouched = (isNextToLeftWall()) ? -1 : 1;
             canDash = true;
-        } else
+        }
+        else
         {
             wallCoyoteTimeCounter -= Time.deltaTime;
         }
@@ -126,7 +126,8 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
-        } else
+        }
+        else
         {
             jumpBufferCounter -= Time.deltaTime;
         }
@@ -140,11 +141,12 @@ public class Player : MonoBehaviour
             jumpBufferCounter = 0f;
             FindObjectOfType<AudioManager>().Play("playerJump");
 
-        } else
+        }
+        else
         {
             // Wall Jumping
             // Only check if we have wallJumpPower at the end for performance
-            if(jumpBufferCounter > 0f && wallCoyoteTimeCounter > 0f && wallJumpPower.GetValue())
+            if (jumpBufferCounter > 0f && wallCoyoteTimeCounter > 0f && wallJumpPower.GetValue())
             {
                 // Debug.Log("Jumped");
                 rb2D.velocity = new Vector2(wallJumpForceX * lastWallTouched * -1, wallJumpForceY);
@@ -153,10 +155,11 @@ public class Player : MonoBehaviour
 
                 FindObjectOfType<AudioManager>().Play("playerJump");
 
-            } else if(((isNextToLeftWall() && Input.GetKey(KeyCode.A)) || (isNextToRightWall() && Input.GetKey(KeyCode.D))) && rb2D.velocity.y < 0f) // Sliding if holding towards wall and falling
+            }
+            else if (((isNextToLeftWall() && Input.GetKey(KeyCode.A)) || (isNextToRightWall() && Input.GetKey(KeyCode.D))) && rb2D.velocity.y < 0f) // Sliding if holding towards wall and falling
             {
                 rb2D.velocity = new Vector2(rb2D.velocity.x, wallSlidingSpeed * -1);
-                
+
             }
         }
 
@@ -168,15 +171,26 @@ public class Player : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
 
+        if (canDash && Input.GetButtonDown("Fire2") && dashPower.GetValue())
+        {
+            StartCoroutine("Dash");
+        }
+    }
+
+    // All physics tampering should be in fixed update
+    void FixedUpdate()
+    {
+        if(isLeavingLevel || isInHitstun)
+        {
+            return;
+        }
+        
+        Move();
+
         // Capped Fall Speed
         if (rb2D.velocity.y < 0f && rb2D.velocity.y < (maxFallSpeed * -1))
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, (maxFallSpeed * -1));
-        }
-
-        if(canDash && Input.GetButtonDown("Fire2") && dashPower.GetValue())
-        {
-            StartCoroutine("Dash");
         }
     }
 
@@ -210,16 +224,10 @@ public class Player : MonoBehaviour
             }
         }
 
-
         currentVelocity = rb2D.velocity;
         currentVelocity.x = Mathf.MoveTowards(currentVelocity.x, dir * maxSpeed + modifier, currentAcceleration);
-
         
         rb2D.velocity = currentVelocity;
-        // Debug.Log(rb2D.velocity);
-
-
-        // Debug.Log(rb2D.velocity);
 
         // Input is moving character right and is facing left
         if (dir == 1 && !facingRight)
@@ -232,8 +240,6 @@ public class Player : MonoBehaviour
             Flip();
         }
 
-
-        // Debug.Log(dir);
     }
 
     private bool isGrounded()
