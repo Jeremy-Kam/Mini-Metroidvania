@@ -1,3 +1,4 @@
-My first actual video game. All my previous games are clones of existing games (created for my own learning) or do not work, however this is the first project I intend to finish. I will update this README once this build is finished.
+My first original game. I have done many projects that emulated other games to learn Unity and Godot and followed many tutorials. It was a passion project, and I did every aspect of the development by myself, including the art, sound, and code. I enlisted the help of close friends to playtest it a few times during development. It gave me a new appreciation of how much work games require, even simple ones.
 
-NOTE: This project was started on another github account, and was migrated to this one for organization purposes.
+If you want to try it out, you can play it in your browser here:
+https://jijiyaki.itch.io/mini-cube-metroidvania
